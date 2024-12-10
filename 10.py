@@ -33,7 +33,7 @@ def backtrack(start_coords, curr_coords, curr_level=0, path=set()):
 for i in range(ROWS):
     for j in range(COLS):
         if board[i][j] == 0:
-            backtrack((j, i), (j, i))
+            backtrack((j, i), (j, i), path=set((j,i)))
 
 print(f'part 1: {str(sum([len(v) for v in matches.values()]))}')
 print(f'part 2: {str(sum([len(v) for v in paths.values()]))}')
